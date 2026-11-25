@@ -122,6 +122,14 @@ public class MainActivity extends Activity {
             }
         });
 
+        Button stats = (Button) findViewById(R.id.btnStats);
+        stats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, StatsActivity.class));
+            }
+        });
+
         ReminderScheduler.apply(this);
         Notifications.ensureChannel(this);
 

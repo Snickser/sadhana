@@ -11,8 +11,8 @@
         android:orientation="horizontal"
         android:background="#E65100"
         android:gravity="center_vertical"
-        android:paddingLeft="16dp"
-        android:paddingRight="8dp">
+        android:paddingLeft="14dp"
+        android:paddingRight="6dp">
 
         <TextView
             android:id="@+id/header"
@@ -21,19 +21,30 @@
             android:layout_weight="1"
             android:text="Отчёты по садхане"
             android:textColor="#FFFFFF"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:paddingTop="14dp"
             android:paddingBottom="14dp" />
 
         <Button
+            android:id="@+id/btnStats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="42dp"
+            android:layout_marginLeft="4dp"
+            android:text="📊"
+            android:textSize="16sp"
+            android:backgroundTint="#F57C00"
+            android:textColor="#FFFFFF" />
+
+        <Button
             android:id="@+id/btnSettings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="48dp"
-            android:layout_marginLeft="6dp"
+            android:minWidth="42dp"
+            android:layout_marginLeft="4dp"
             android:text="⏰"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:backgroundTint="#F57C00"
             android:textColor="#FFFFFF" />
 
@@ -41,10 +52,10 @@
             android:id="@+id/btnDonate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="48dp"
-            android:layout_marginLeft="6dp"
+            android:minWidth="42dp"
+            android:layout_marginLeft="4dp"
             android:text="♥"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:backgroundTint="#F57C00"
             android:textColor="#FFFFFF" />
 
@@ -52,10 +63,10 @@
             android:id="@+id/btnDeleteAll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="48dp"
-            android:layout_marginLeft="6dp"
+            android:minWidth="42dp"
+            android:layout_marginLeft="4dp"
             android:text="🗑"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:backgroundTint="#C62828"
             android:textColor="#FFFFFF" />
     </LinearLayout>

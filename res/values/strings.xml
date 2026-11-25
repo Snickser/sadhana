@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">Садхана</string>
     <string name="edit_title">Отчёт за день</string>
+    <string name="stats_title">Графики</string>
 </resources>

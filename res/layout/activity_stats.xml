@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF8F0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#E65100"
+        android:gravity="center_vertical"
+        android:paddingLeft="6dp"
+        android:paddingRight="16dp">
+
+        <Button
+            android:id="@+id/btnStatsBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="48dp"
+            android:text="‹"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:backgroundTint="#F57C00"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:text="Графики"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#F5E6D3"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/btnPeriod7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="7 дней"
+            android:textSize="13sp"
+            android:backgroundTint="#FFE0B2"
+            android:textColor="#BF360C" />
+
+        <Button
+            android:id="@+id/btnPeriod30"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="6dp"
+            android:text="30 дней"
+            android:textSize="13sp"
+            android:backgroundTint="#FFE0B2"
+            android:textColor="#BF360C" />
+
+        <Button
+            android:id="@+id/btnPeriod90"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="6dp"
+            android:text="90 дней"
+            android:textSize="13sp"
+            android:backgroundTint="#FFE0B2"
+            android:textColor="#BF360C" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/statsSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_bg"
+                android:padding="14dp"
+                android:textColor="#6D4C41"
+                android:textSize="13sp"
+                android:lineSpacingExtra="3dp"
+                android:text="" />
+
+            <ru.rolyc.sadhana.BarChartView
+                android:id="@+id/chartRounds"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/card_bg" />
+
+            <ru.rolyc.sadhana.BarChartView
+                android:id="@+id/chartPoints"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/card_bg" />
+
+            <ru.rolyc.sadhana.BarChartView
+                android:id="@+id/chartReading"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/card_bg" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

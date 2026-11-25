@@ -8,11 +8,22 @@
 
 ## Файл для установки
 
-`sadhana-2.0.apk` — подписан, minSdk 21 (Android 5.0+), targetSdk 34.
+`sadhana-2.1.apk` — подписан, minSdk 21 (Android 5.0+), targetSdk 34.
 Ставится поверх любой предыдущей версии как обновление: база сохраняется.
 
 Установка: скопировать на телефон → открыть файл → разрешить установку из этого источника
 (Android спросит «Неизвестный источник» для файлового менеджера / Telegram).
+
+## Что нового в 2.1
+
+- Экран «Графики» (кнопка 📊 в шапке): три столбчатых графика по дням — круги джапы
+  с линией цели 16, регулярные пункты из 5, чтение в минутах. Периоды 7 / 30 / 90 дней.
+- Сводка над графиками: заполнено дней, среднее и сумма кругов, лучший день, средний балл
+  пунктов, серия заполненных дней подряд до сегодня.
+- Графики нарисованы своим `BarChartView` на Canvas — без библиотек и без AndroidX, APK
+  вырос всего на 4 КБ. Пропущенный день виден бледной меткой на оси, шкала всегда с запасом
+  сверху, подписи дат прореживаются, чтобы не слипаться.
+- Кнопки шапки ужаты (42dp, 16sp), чтобы поместились четыре: 📊 ⏰ ♥ 🗑.
 
 ## Что нового в 2.0
 
@@ -146,6 +157,10 @@ javac -encoding UTF-8 -d build/test-classes \
 java -cp build/test-classes ReportJsonTest    # 45 проверок
 java -cp build/test-classes NumTest          # 26 проверок
 java -cp build/test-classes ReminderTimeTest # 12 проверок
+java -cp build/test-classes StatsDataTest    # 27 проверок
+java -cp build/test-classes AxisTest         # 22 проверки
+
+python3 preview_charts.py                    # макет графиков в PNG (PIL, для проверки геометрии)
 ```
 
 ## Структура
@@ -158,6 +173,10 @@ src/ru/rolyc/sadhana/
   ReportsDb.java       SQLite: таблица reports, upsert по дате
   Report.java          модель + балл дня (чистый Java)
   ReportJson.java      формат файла (чистый Java)
+  StatsData.java       ряды по дням для графиков (чистый Java)
+  Axis.java            шкала графика (чистый Java)
+  BarChartView.java    столбчатый график на Canvas
+  StatsActivity.java   экран графиков
   MiniJson.java        мини-JSON писатель/разборщик (чистый Java)
   Num.java             разбор числовых полей (чистый Java)
   ReminderTime.java    расчёт времени напоминания (чистый Java)
