@@ -10,7 +10,6 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -144,36 +143,42 @@ public class MainActivity extends Activity {
             return;
         }
         String word = total == 1 ? "отчёт" : (total < 5 ? "отчёта" : "отчётов");
-        AlertDialog dlg = new AlertDialog.Builder(this)
+
+        View content = getLayoutInflater().inflate(R.layout.dialog_confirm_delete, null);
+        TextView message = (TextView) content.findViewById(R.id.tvDeleteAllMessage);
+        message.setText("Будет удалено " + total + " " + word + " — вся база целиком.\n\n"
+                + "Действие необратимо: восстановить можно только из файла копии. "
+                + "Если копии нет, сделайте её кнопкой «Копия».");
+
+        final AlertDialog dlg = new AlertDialog.Builder(this)
                 .setTitle("Удалить все записи?")
-                .setMessage("Будет удалено " + total + " " + word + " — вся база целиком.\n\n"
-                        + "Действие необратимо: восстановить можно только из файла копии. "
-                        + "Если копии нет, сделайте её кнопкой «Копия».")
-                .setNeutralButton("Копия", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        startExport();
-                    }
-                })
-                .setNegativeButton("Отмена", null)
-                .setPositiveButton("Удалить всё", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        int deleted = db.deleteAll();
-                        refresh();
-                        Toast.makeText(MainActivity.this,
-                                "Удалено записей: " + deleted, Toast.LENGTH_LONG).show();
-                    }
-                })
+                .setView(content)
                 .create();
-        // Кнопка подтверждения — мелким шрифтом, чтобы не выглядела как главное действие.
-        dlg.setOnShowListener(new DialogInterface.OnShowListener() {
+
+        content.findViewById(R.id.btnDeleteAllConfirm).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onShow(DialogInterface dialog) {
-                Button positive = ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_POSITIVE);
-                if (positive != null) positive.setTextSize(TypedValue.COMPLEX_UNIT_SP, 11f);
+            public void onClick(View v) {
+                dlg.dismiss();
+                int deleted = db.deleteAll();
+                refresh();
+                Toast.makeText(MainActivity.this,
+                        "Удалено записей: " + deleted, Toast.LENGTH_LONG).show();
             }
         });
+        content.findViewById(R.id.btnDeleteAllBackup).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dlg.dismiss();
+                startExport();
+            }
+        });
+        content.findViewById(R.id.btnDeleteAllCancel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dlg.dismiss();
+            }
+        });
+
         dlg.show();
     }
 

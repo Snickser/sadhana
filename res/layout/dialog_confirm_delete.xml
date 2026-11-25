@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="8dp">
+
+    <TextView
+        android:id="@+id/tvDeleteAllMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5D4037"
+        android:textSize="14sp"
+        android:lineSpacingExtra="2dp"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btnDeleteAllBackup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Копия"
+        android:textSize="13sp"
+        android:backgroundTint="#FFE0B2"
+        android:textColor="#BF360C" />
+
+    <Button
+        android:id="@+id/btnDeleteAllCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Отмена"
+        android:textSize="13sp"
+        android:backgroundTint="#EFEBE9"
+        android:textColor="#4E342E" />
+
+    <Button
+        android:id="@+id/btnDeleteAllConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Удалить всё"
+        android:textSize="10sp"
+        android:backgroundTint="#C62828"
+        android:textColor="#FFFFFF" />
+</LinearLayout>
