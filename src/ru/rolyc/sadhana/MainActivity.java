@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -143,8 +144,8 @@ public class MainActivity extends Activity {
             return;
         }
         String word = total == 1 ? "отчёт" : (total < 5 ? "отчёта" : "отчётов");
-        new AlertDialog.Builder(this)
-                .setTitle("Удалить всё?")
+        AlertDialog dlg = new AlertDialog.Builder(this)
+                .setTitle("Удалить все записи?")
                 .setMessage("Будет удалено " + total + " " + word + " — вся база целиком.\n\n"
                         + "Действие необратимо: восстановить можно только из файла копии. "
                         + "Если копии нет, сделайте её кнопкой «Копия».")
@@ -164,7 +165,16 @@ public class MainActivity extends Activity {
                                 "Удалено записей: " + deleted, Toast.LENGTH_LONG).show();
                     }
                 })
-                .show();
+                .create();
+        // Кнопка подтверждения — мелким шрифтом, чтобы не выглядела как главное действие.
+        dlg.setOnShowListener(new DialogInterface.OnShowListener() {
+            @Override
+            public void onShow(DialogInterface dialog) {
+                Button positive = ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_POSITIVE);
+                if (positive != null) positive.setTextSize(TypedValue.COMPLEX_UNIT_SP, 11f);
+            }
+        });
+        dlg.show();
     }
 
     // ---------------- донат ----------------
