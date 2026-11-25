@@ -144,7 +144,7 @@ public class MainActivity extends Activity {
         }
         String word = total == 1 ? "отчёт" : (total < 5 ? "отчёта" : "отчётов");
         new AlertDialog.Builder(this)
-                .setTitle("Удалить все записи?")
+                .setTitle("Удалить всё?")
                 .setMessage("Будет удалено " + total + " " + word + " — вся база целиком.\n\n"
                         + "Действие необратимо: восстановить можно только из файла копии. "
                         + "Если копии нет, сделайте её кнопкой «Копия».")

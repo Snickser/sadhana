@@ -69,16 +69,14 @@
 
         <Button
             android:id="@+id/btnDeleteAll"
-            android:layout_width="wrap_content"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:minWidth="0dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
             android:layout_marginLeft="4dp"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp"
-            android:minHeight="0dp"
-            android:text="удалить&#10;всё"
-            android:textSize="9sp"
-            android:gravity="center"
+            android:text="🗑"
+            android:textSize="16sp"
             android:backgroundTint="#C62828"
             android:textColor="#FFFFFF" />
     </LinearLayout>
