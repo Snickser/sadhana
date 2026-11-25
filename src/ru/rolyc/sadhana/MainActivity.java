@@ -159,10 +159,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 dlg.dismiss();
-                int deleted = db.deleteAll();
-                refresh();
-                Toast.makeText(MainActivity.this,
-                        "Удалено записей: " + deleted, Toast.LENGTH_LONG).show();
+                confirmDeleteAllFinal(total);
             }
         });
         content.findViewById(R.id.btnDeleteAllBackup).setOnClickListener(new View.OnClickListener() {
@@ -173,6 +170,44 @@ public class MainActivity extends Activity {
             }
         });
         content.findViewById(R.id.btnDeleteAllCancel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dlg.dismiss();
+            }
+        });
+
+        dlg.show();
+    }
+
+    /**
+     * Второе подтверждение — на случай, если «Удалить всё» нажали случайно.
+     * Только после него данные действительно стираются.
+     */
+    private void confirmDeleteAllFinal(int total) {
+        String word = total == 1 ? "отчёт" : (total < 5 ? "отчёта" : "отчётов");
+
+        View content = getLayoutInflater().inflate(R.layout.dialog_confirm_final, null);
+        TextView message = (TextView) content.findViewById(R.id.tvFinalMessage);
+        message.setText("Точно уверены? Пропадут все " + total + " " + word
+                + " — круги, чтение, служение, заметки.\n\n"
+                + "Вернуть их сможет только файл копии.");
+
+        final AlertDialog dlg = new AlertDialog.Builder(this)
+                .setTitle("Точно уверены?")
+                .setView(content)
+                .create();
+
+        content.findViewById(R.id.btnFinalConfirm).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dlg.dismiss();
+                int deleted = db.deleteAll();
+                refresh();
+                Toast.makeText(MainActivity.this,
+                        "Удалено записей: " + deleted, Toast.LENGTH_LONG).show();
+            }
+        });
+        content.findViewById(R.id.btnFinalCancel).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dlg.dismiss();

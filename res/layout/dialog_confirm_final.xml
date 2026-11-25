@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="8dp">
+
+    <TextView
+        android:id="@+id/tvFinalMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5D4037"
+        android:textSize="14sp"
+        android:lineSpacingExtra="2dp"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btnFinalCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Нет, оставить"
+        android:textSize="13sp"
+        android:backgroundTint="#EFEBE9"
+        android:textColor="#4E342E" />
+
+    <Button
+        android:id="@+id/btnFinalConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Да, удалить всё"
+        android:textSize="10sp"
+        android:backgroundTint="#C62828"
+        android:textColor="#FFFFFF" />
+</LinearLayout>
