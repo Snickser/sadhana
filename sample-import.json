@@ -1,0 +1,47 @@
+{
+  "app": "sadhana",
+  "format": 1,
+  "exported_at": 1732400000000,
+  "count": 3,
+  "reports": [
+    {
+      "date": "2026-11-21",
+      "rounds": 16,
+      "reading_min": 25,
+      "wake_early": true,
+      "sleep_early": true,
+      "mangala_arati": true,
+      "lecture": true,
+      "prasadam": true,
+      "service": "уборка в храме",
+      "notes": "джапа внимательная, пример импорта",
+      "updated_at": 1732400000000
+    },
+    {
+      "date": "2026-11-22",
+      "rounds": 12,
+      "reading_min": 0,
+      "wake_early": false,
+      "sleep_early": true,
+      "mangala_arati": false,
+      "lecture": true,
+      "prasadam": true,
+      "service": "",
+      "notes": "поздний подъём",
+      "updated_at": 1732400000000
+    },
+    {
+      "date": "2026-11-23",
+      "rounds": 16,
+      "reading_min": 40,
+      "wake_early": true,
+      "sleep_early": true,
+      "mangala_arati": true,
+      "lecture": false,
+      "prasadam": true,
+      "service": "проповедь, Бхакти Врикша",
+      "notes": "читать ШБ 1.2.6",
+      "updated_at": 1732400000000
+    }
+  ]
+}

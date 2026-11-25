@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="4dp">
+
+    <CheckBox
+        android:id="@+id/cbReminderEnabled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Напоминать каждый день"
+        android:textColor="#3E2723"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Время напоминания"
+            android:textColor="#5D4037"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btnReminderTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="21:00"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="#FFE0B2"
+            android:textColor="#BF360C" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvReminderHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="#8D6E63"
+        android:textSize="13sp"
+        android:text="" />
+</LinearLayout>

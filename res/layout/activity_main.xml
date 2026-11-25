@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF8F0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#E65100"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="8dp">
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Отчёты по садхане"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp" />
+
+        <Button
+            android:id="@+id/btnSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="48dp"
+            android:layout_marginLeft="6dp"
+            android:text="⏰"
+            android:textSize="18sp"
+            android:backgroundTint="#F57C00"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnDonate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="48dp"
+            android:layout_marginLeft="6dp"
+            android:text="♥"
+            android:textSize="18sp"
+            android:backgroundTint="#F57C00"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnDeleteAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="48dp"
+            android:layout_marginLeft="6dp"
+            android:text="🗑"
+            android:textSize="18sp"
+            android:backgroundTint="#C62828"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/summary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5E6D3"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="#6D4C41"
+        android:textSize="13sp"
+        android:text="" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:clipToPadding="false"
+            android:scrollbars="vertical" />
+
+        <TextView
+            android:id="@+id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            android:text="Пока нет ни одного отчёта.\n\nНажмите «＋ Отчёт», чтобы заполнить отчёт за сегодня."
+            android:textColor="#A1887F"
+            android:textSize="15sp"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/btnExport"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Экспорт"
+            android:textSize="13sp"
+            android:backgroundTint="#FFB74D"
+            android:textColor="#4E342E" />
+
+        <Button
+            android:id="@+id/btnImport"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="8dp"
+            android:text="Импорт"
+            android:textSize="13sp"
+            android:backgroundTint="#FFB74D"
+            android:textColor="#4E342E" />
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:layout_marginLeft="8dp"
+            android:text="＋ Отчёт"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:backgroundTint="#E65100"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</LinearLayout>

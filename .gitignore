@@ -1,0 +1,21 @@
+# Сборка
+build/
+*.apk
+
+# Тулчейн: JDK и Android SDK скачиваются заново (1.1 ГБ), в git не место
+toolchain/
+
+# Ключи и пароли — НИКОГДА в репозиторий
+keystore/
+*.keystore
+*.jks
+.ks_pass
+.env
+
+# Мусор
+*.log
+.DS_Store
+Thumbs.db
+
+# артефакты подписи
+*.idsig
