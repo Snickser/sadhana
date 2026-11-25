@@ -144,30 +144,48 @@ public class EditActivity extends Activity {
     private void load() {
         Report r = db.byDate(date);
         if (r != null) {
-            inRounds.setText(Num.field(r.rounds));
-            inReading.setText(Num.field(r.readingMin));
-            cbWake.setChecked(r.wakeEarly);
-            cbSleep.setChecked(r.sleepEarly);
-            cbArati.setChecked(r.mangalaArati);
-            cbLecture.setChecked(r.lecture);
-            cbPrasadam.setChecked(r.prasadam);
-            inService.setText(r.service);
-            inNotes.setText(r.notes);
+            fillForm(r, true);
             btnDelete.setVisibility(View.VISIBLE);
         } else {
-            // Новый отчёт: сразу подставляем цель по кругам, чтобы «пусто» не значило 0.
-            inRounds.setText(String.valueOf(Report.TARGET_ROUNDS));
-            inReading.setText("");
-            cbWake.setChecked(false);
-            cbSleep.setChecked(false);
-            cbArati.setChecked(false);
-            cbLecture.setChecked(false);
-            cbPrasadam.setChecked(false);
-            inService.setText("");
-            inNotes.setText("");
+            // Новый день: берём данные последнего отчёта, чтобы не заполнять с нуля.
+            Report prev = db.previousBefore(date);
+            if (prev != null) {
+                fillForm(prev, false);
+                if (prev.rounds <= 0) inRounds.setText(String.valueOf(Report.TARGET_ROUNDS));
+                Toast.makeText(this, "Поля заполнены из отчёта за " + shortDate(prev.date),
+                        Toast.LENGTH_LONG).show();
+            } else {
+                // Самый первый отчёт: подставляем цель по кругам, чтобы «пусто» не значило 0.
+                inRounds.setText(String.valueOf(Report.TARGET_ROUNDS));
+                inReading.setText("");
+                cbWake.setChecked(false);
+                cbSleep.setChecked(false);
+                cbArati.setChecked(false);
+                cbLecture.setChecked(false);
+                cbPrasadam.setChecked(false);
+                inService.setText("");
+                inNotes.setText("");
+            }
             btnDelete.setVisibility(View.GONE);
         }
         updateDateLabel();
+    }
+
+    /** Переносит значения отчёта в форму. Заметки — только когда это тот же день. */
+    private void fillForm(Report r, boolean withNotes) {
+        inRounds.setText(Num.field(r.rounds));
+        inReading.setText(Num.field(r.readingMin));
+        cbWake.setChecked(r.wakeEarly);
+        cbSleep.setChecked(r.sleepEarly);
+        cbArati.setChecked(r.mangalaArati);
+        cbLecture.setChecked(r.lecture);
+        cbPrasadam.setChecked(r.prasadam);
+        inService.setText(r.service);
+        inNotes.setText(withNotes ? r.notes : "");
+    }
+
+    private String shortDate(String isoDate) {
+        return new SimpleDateFormat("d MMMM", new Locale("ru", "RU")).format(parseIso(isoDate));
     }
 
     private void updateDateLabel() {

@@ -63,6 +63,17 @@ public class ReportsDb extends SQLiteOpenHelper {
         }
     }
 
+    /** Последний отчёт строго раньше указанной даты — из него заполняется новый день. */
+    public Report previousBefore(String date) {
+        Cursor c = getReadableDatabase().query(TABLE, null, "date<?", new String[]{date},
+                null, null, "date DESC", "1");
+        try {
+            return c.moveToFirst() ? read(c) : null;
+        } finally {
+            c.close();
+        }
+    }
+
     public int count() {
         Cursor c = getReadableDatabase().rawQuery("SELECT COUNT(*) FROM " + TABLE, null);
         try {
