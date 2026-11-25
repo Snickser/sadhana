@@ -166,11 +166,6 @@ public class BarChartView extends View {
         }
     }
 
-    /** Верх шкалы берём из чистого класса Axis — чтобы правило было покрыто тестами. */
-    static int niceMax(int value) {
-        return Axis.niceMax(value);
-    }
-
     private float dp(float v) {
         return v * density;
     }

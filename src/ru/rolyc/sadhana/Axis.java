@@ -3,15 +3,24 @@ package ru.rolyc.sadhana;
 /** Расчёт шкалы графика. Чистый Java — тестируется на JVM. */
 public final class Axis {
 
+    /**
+     * Допустимые «круглые» верхние значения. На малых числах шаги частые (3, 5, 6),
+     * чтобы шкала не улетала вдвое выше данных: 5 из 5 больше не даёт 8.
+     */
+    private static final int[] STEPS = {
+            1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 16, 20, 25, 30, 40, 50,
+            60, 80, 100, 120, 150, 200, 250, 300, 400, 500, 600, 800,
+            1000, 1200, 1500, 2000, 2500, 3000, 4000, 5000
+    };
+
     private Axis() {
     }
 
-    /** Верх шкалы: 1,2,4,8,10,16,20,25,32,50,100,150,200,300,500,1000, дальше кратно 1000. */
+    /** Наименьшее «круглое» число, не меньшее value. */
     public static int niceMax(int value) {
         if (value <= 1) return 1;
-        int[] steps = {1, 2, 4, 8, 10, 16, 20, 25, 32, 50, 100, 150, 200, 300, 500, 1000};
-        for (int i = 0; i < steps.length; i++) {
-            if (value <= steps[i]) return steps[i];
+        for (int i = 0; i < STEPS.length; i++) {
+            if (value <= STEPS[i]) return STEPS[i];
         }
         return ((value + 999) / 1000) * 1000;
     }
@@ -23,24 +32,12 @@ public final class Axis {
     }
 
     /**
-     * Верх шкалы для столбиков: не меньше значения и не меньше цели, но с запасом —
-     * если максимум ровно совпал с шагом, берём следующий, чтобы столбик не упирался в рамку.
+     * Верх шкалы для столбиков: строго выше и максимума, и цели — столбик не упирается
+     * в рамку, но лишнего запаса нет. 5 → 6, 16 → 20, 25 → 30, 50 → 60.
      */
     public static int niceMaxWithHeadroom(int maxValue, int target) {
         int floor = maxValue > target ? maxValue : target;
-        int top = niceMax(floor);
-        if (top <= maxValue) {
-            top = nextStep(top);
-        }
-        return top;
-    }
-
-    /** Следующий шаг шкалы после текущего. */
-    static int nextStep(int current) {
-        int[] steps = {1, 2, 4, 8, 10, 16, 20, 25, 32, 50, 100, 150, 200, 300, 500, 1000};
-        for (int i = 0; i < steps.length; i++) {
-            if (steps[i] > current) return steps[i];
-        }
-        return current + 1000 - (current % 1000);
+        if (floor <= 0) return 1;
+        return niceMax(floor + 1);
     }
 }

@@ -28,7 +28,9 @@ def font(size_px):
     return ImageFont.load_default()
 
 
-STEPS = [1, 2, 4, 8, 10, 16, 20, 25, 32, 50, 100, 150, 200, 300, 500, 1000]
+STEPS = [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 16, 20, 25, 30, 40, 50,
+         60, 80, 100, 120, 150, 200, 250, 300, 400, 500, 600, 800,
+         1000, 1200, 1500, 2000, 2500, 3000, 4000, 5000]
 
 
 def nice_max(value):
@@ -49,10 +51,9 @@ def next_step(current):
 
 def nice_max_with_headroom(max_value, target):
     floor = max(max_value, target)
-    top = nice_max(floor)
-    if top <= max_value:
-        top = next_step(top)
-    return top
+    if floor <= 0:
+        return 1
+    return nice_max(floor + 1)
 
 
 def draw_chart(w, h, values, labels, present, target, title, unit, bar_color):
