@@ -1,4 +1,4 @@
-<img width="578" height="1280" alt="изображение" src="https://github.com/user-attachments/assets/27164b4e-d934-4dfe-9509-a5cc64e127c4" />
+<img height="400" alt="изображение" src="https://github.com/user-attachments/assets/27164b4e-d934-4dfe-9509-a5cc64e127c4" />
 
 # Садхана — отчёты по личной садхане (Android)
 
