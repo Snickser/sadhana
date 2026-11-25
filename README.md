@@ -1,4 +1,5 @@
-<img height="400" alt="изображение" src="https://github.com/user-attachments/assets/27164b4e-d934-4dfe-9509-a5cc64e127c4" /> <img height="400" alt="изображение" src="https://github.com/user-attachments/assets/20ba4827-3a5a-4887-bf95-4e7ae139788a" /> <img height="400" alt="изображение" src="https://github.com/user-attachments/assets/4b39961b-3744-4d24-88ef-0e6c8543a397" />
+<img height="400" alt="изображение" src="https://github.com/user-attachments/assets/13bb9c58-b5ed-4c02-9798-cee9d863ca6b" /> <img height="400" alt="изображение" src="https://github.com/user-attachments/assets/20ba4827-3a5a-4887-bf95-4e7ae139788a" /> <img height="400" alt="изображение" src="https://github.com/user-attachments/assets/4b39961b-3744-4d24-88ef-0e6c8543a397" /> <img height="400" alt="изображение" src="https://github.com/user-attachments/assets/6fbc3e01-603d-4aa4-8b9b-58cf8923a317" />
+
 
 
 # Садхана — отчёты по личной садхане (Android)
