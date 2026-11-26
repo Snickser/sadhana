@@ -3,44 +3,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFF8F0">
+    android:background="@color/cream">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#E65100"
+        android:background="@drawable/bg_header"
         android:gravity="center_vertical"
-        android:paddingLeft="6dp"
-        android:paddingRight="16dp">
+        android:paddingLeft="10dp"
+        android:paddingRight="16dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
 
-        <Button
+        <ImageButton
             android:id="@+id/btnStatsBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="48dp"
-            android:text="‹"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:backgroundTint="#F57C00"
-            android:textColor="#FFFFFF" />
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:padding="10dp"
+            android:background="@drawable/btn_icon"
+            android:src="@drawable/ic_back"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/back_title" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:text="Графики"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
+            android:layout_marginLeft="12dp"
+            android:text="@string/stats_title"
+            android:textColor="#FFF8E7"
+            android:textSize="17sp"
+            android:fontFamily="serif"
             android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_lotus"
+            android:contentDescription="@string/lotus" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#F5E6D3"
+        android:background="@color/gold_pale"
         android:padding="8dp">
 
         <Button
@@ -50,8 +58,8 @@
             android:layout_weight="1"
             android:text="7 дней"
             android:textSize="13sp"
-            android:backgroundTint="#FFE0B2"
-            android:textColor="#BF360C" />
+            android:backgroundTint="@color/gold_pale"
+            android:textColor="@color/maroon" />
 
         <Button
             android:id="@+id/btnPeriod30"
@@ -61,8 +69,8 @@
             android:layout_marginLeft="6dp"
             android:text="30 дней"
             android:textSize="13sp"
-            android:backgroundTint="#FFE0B2"
-            android:textColor="#BF360C" />
+            android:backgroundTint="@color/gold_pale"
+            android:textColor="@color/maroon" />
 
         <Button
             android:id="@+id/btnPeriod90"
@@ -72,8 +80,8 @@
             android:layout_marginLeft="6dp"
             android:text="90 дней"
             android:textSize="13sp"
-            android:backgroundTint="#FFE0B2"
-            android:textColor="#BF360C" />
+            android:backgroundTint="@color/gold_pale"
+            android:textColor="@color/maroon" />
     </LinearLayout>
 
     <ScrollView
@@ -94,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/card_bg"
                 android:padding="14dp"
-                android:textColor="#6D4C41"
+                android:textColor="@color/ink_soft"
                 android:textSize="13sp"
                 android:lineSpacingExtra="3dp"
                 android:text="" />

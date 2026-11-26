@@ -3,4 +3,11 @@
     <string name="app_name">Садхана</string>
     <string name="edit_title">Отчёт за день</string>
     <string name="stats_title">Графики</string>
+    <string name="header_subtitle">साधना · ежедневные отчёты</string>
+    <string name="lotus">Лотос</string>
+    <string name="empty_hint">Пока нет ни одного отчёта.\n\nНажмите «＋ Отчёт», чтобы заполнить отчёт за сегодня.</string>
+    <string name="reminder_title">Напоминание</string>
+    <string name="donate_title">Поддержать проект</string>
+    <string name="delete_all_title">Удалить все записи</string>
+    <string name="back_title">Назад</string>
 </resources>

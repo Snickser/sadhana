@@ -98,7 +98,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        Button settings = (Button) findViewById(R.id.btnSettings);
+        View settings = findViewById(R.id.btnSettings);
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,7 +106,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        Button deleteAll = (Button) findViewById(R.id.btnDeleteAll);
+        View deleteAll = findViewById(R.id.btnDeleteAll);
         deleteAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,7 +114,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        Button donate = (Button) findViewById(R.id.btnDonate);
+        View donate = findViewById(R.id.btnDonate);
         donate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,7 +122,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        Button stats = (Button) findViewById(R.id.btnStats);
+        View stats = findViewById(R.id.btnStats);
         stats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

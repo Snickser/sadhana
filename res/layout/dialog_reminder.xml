@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Напоминать каждый день"
-        android:textColor="#3E2723"
+        android:textColor="@color/ink"
         android:textSize="16sp" />
 
     <LinearLayout
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Время напоминания"
-            android:textColor="#5D4037"
+            android:textColor="@color/ink"
             android:textSize="15sp" />
 
         <Button
@@ -38,8 +38,8 @@
             android:text="21:00"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:backgroundTint="#FFE0B2"
-            android:textColor="#BF360C" />
+            android:background="@drawable/btn_gold"
+            android:textColor="@color/maroon" />
     </LinearLayout>
 
     <TextView
@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:textColor="#8D6E63"
+        android:textColor="@color/ink_soft"
         android:textSize="13sp"
         android:text="" />
 </LinearLayout>

@@ -64,8 +64,8 @@ public class StatsActivity extends Activity {
                 "Регулярные пункты", "из 5");
         chartReading.setData(d.readingMin, d.labels, d.present, 0,
                 "Чтение, минут", "мин");
-        chartPoints.setBarColor(0xFF6D8C4E);
-        chartReading.setBarColor(0xFF7E57C2);
+        chartPoints.setBarColor(0xFF4F6B3A);
+        chartReading.setBarColor(0xFF2E6E6A);
 
         highlightPeriodButtons();
 
@@ -92,8 +92,8 @@ public class StatsActivity extends Activity {
             Button b = (Button) findViewById(ids[i]);
             boolean active = days[i] == period;
             b.setBackgroundTintList(android.content.res.ColorStateList.valueOf(
-                    active ? 0xFFE65100 : 0xFFFFE0B2));
-            b.setTextColor(active ? 0xFFFFFFFF : 0xFFBF360C);
+                    active ? 0xFFC1440E : 0xFFF7E9CE));
+            b.setTextColor(active ? 0xFFFFFFFF : 0xFF6B1F1F);
         }
     }
 }

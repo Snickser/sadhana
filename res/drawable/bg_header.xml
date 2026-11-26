@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Шапка: шафрановый градиент с золотой линией и скруглённым низом -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:startColor="#D9611B"
+                android:centerColor="#C1440E"
+                android:endColor="#8C2E08" />
+            <corners
+                android:bottomLeftRadius="18dp"
+                android:bottomRightRadius="18dp" />
+        </shape>
+    </item>
+    <item
+        android:gravity="bottom"
+        android:height="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#C8A15A" />
+        </shape>
+    </item>
+</layer-list>

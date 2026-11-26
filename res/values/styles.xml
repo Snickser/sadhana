@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="AppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
-        <item name="android:colorPrimary">#E65100</item>
-        <item name="android:colorPrimaryDark">#BF360C</item>
-        <item name="android:colorAccent">#E65100</item>
-        <item name="android:windowBackground">#FFF8F0</item>
+        <item name="android:colorPrimary">#C1440E</item>
+        <item name="android:colorPrimaryDark">#8C2E08</item>
+        <item name="android:colorAccent">#C8A15A</item>
+        <item name="android:windowBackground">#FDF6E6</item>
+        <item name="android:textColorPrimary">#3B2416</item>
+        <item name="android:textColorSecondary">#8A6A52</item>
+    </style>
+
+    <!-- Заголовок шапки: «Садхана» с санскритской подписью -->
+    <style name="HeaderTitle">
+        <item name="android:textColor">#FFF8E7</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:letterSpacing">0.04</item>
+    </style>
+
+    <style name="HeaderSubtitle">
+        <item name="android:textColor">#E8D3A9</item>
+        <item name="android:textSize">9sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:letterSpacing">0.08</item>
     </style>
 </resources>

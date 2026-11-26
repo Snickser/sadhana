@@ -96,6 +96,8 @@ java -cp build/test-classes StatsDataTest    # 27 проверок
 java -cp build/test-classes AxisTest         # 22 проверки
 
 python3 preview_charts.py                    # макет графиков в PNG (PIL, для проверки геометрии)
+python3 preview_theme.py                     # макет главного экрана в новом стиле
+python3 render_vector.py res/drawable/ic_lotus.xml out.png   # рендер vector drawable
 ```
 
 ## Структура
@@ -120,7 +122,7 @@ src/ru/rolyc/sadhana/
   ReminderReceiver.java   срабатывание: уведомление + следующее на завтра
   BootReceiver.java    переустановка будильника после перезагрузки
   Notifications.java   канал и показ уведомления
-res/                   layout, стили, иконки
+res/                   layout, стили, палитра (values/colors.xml), векторные иконки
 test/                  JVM-тесты чистой логики (5 файлов)
 build.sh, make_icon.py, preview_charts.py
 CHANGELOG.md           история изменений по версиям

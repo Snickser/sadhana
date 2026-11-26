@@ -1,6 +1,9 @@
 package ru.rolyc.sadhana;
 
 import android.content.Context;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.RelativeSizeSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,6 +62,10 @@ public class ReportAdapter extends BaseAdapter {
         TextView marks = (TextView) v.findViewById(R.id.rowMarks);
         TextView rounds = (TextView) v.findViewById(R.id.rowRounds);
 
+        // Сегодняшний день отмечен шафрановой полосой слева
+        View bar = v.findViewById(R.id.rowBar);
+        bar.setVisibility(isToday(r.date) ? View.VISIBLE : View.GONE);
+
         date.setText(humanDate(r.date));
         StringBuilder detailsText = new StringBuilder();
         detailsText.append("балл ").append(r.score()).append("/7");
@@ -66,9 +73,22 @@ public class ReportAdapter extends BaseAdapter {
         if (r.service != null && r.service.trim().length() > 0) detailsText.append(" · служение");
         details.setText(detailsText.toString());
         marks.setText(marksLine(r));
-        rounds.setText(r.rounds + "\nкруг.");
+        rounds.setText(roundsLabel(r.rounds));
 
         return v;
+    }
+
+    /** «16» крупно и «круг.» мелким — одним текстом, без второго TextView. */
+    private CharSequence roundsLabel(int value) {
+        String unit = "\nкруг.";
+        SpannableString s = new SpannableString(value + unit);
+        s.setSpan(new RelativeSizeSpan(0.62f), String.valueOf(value).length(), s.length(),
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        return s;
+    }
+
+    private boolean isToday(String isoDate) {
+        return iso.format(new Date()).equals(isoDate);
     }
 
     private String marksLine(Report r) {

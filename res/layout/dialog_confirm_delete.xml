@@ -12,7 +12,7 @@
         android:id="@+id/tvDeleteAllMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#5D4037"
+        android:textColor="@color/ink"
         android:textSize="14sp"
         android:lineSpacingExtra="2dp"
         android:text="" />
@@ -24,8 +24,8 @@
         android:layout_marginTop="14dp"
         android:text="Копия"
         android:textSize="13sp"
-        android:backgroundTint="#FFE0B2"
-        android:textColor="#BF360C" />
+        android:background="@drawable/btn_gold"
+        android:textColor="@color/maroon" />
 
     <Button
         android:id="@+id/btnDeleteAllCancel"
@@ -34,8 +34,8 @@
         android:layout_marginTop="6dp"
         android:text="Отмена"
         android:textSize="13sp"
-        android:backgroundTint="#EFEBE9"
-        android:textColor="#4E342E" />
+        android:background="@drawable/btn_gold"
+        android:textColor="@color/ink" />
 
     <Button
         android:id="@+id/btnDeleteAllConfirm"
@@ -44,6 +44,6 @@
         android:layout_marginTop="6dp"
         android:text="Удалить всё"
         android:textSize="10sp"
-        android:backgroundTint="#C62828"
-        android:textColor="#FFFFFF" />
+        android:background="@drawable/btn_danger"
+        android:textColor="@color/white" />
 </LinearLayout>

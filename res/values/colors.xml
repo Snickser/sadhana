@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Вайшнавская палитра: шафран, золото, сандаловый крем, туласи, павлиний синий -->
+    <color name="kesar">#C1440E</color>
+    <color name="kesar_deep">#8C2E08</color>
+    <color name="kesar_light">#E8763A</color>
+    <color name="gold">#C8A15A</color>
+    <color name="gold_light">#E8D3A9</color>
+    <color name="gold_pale">#F7E9CE</color>
+    <color name="cream">#FDF6E6</color>
+    <color name="card">#FFFDF7</color>
+    <color name="maroon">#6B1F1F</color>
+    <color name="maroon_deep">#4A1414</color>
+    <color name="tulasi">#4F6B3A</color>
+    <color name="peacock">#2E6E6A</color>
+    <color name="ink">#3B2416</color>
+    <color name="ink_soft">#8A6A52</color>
+    <color name="white">#FFFFFF</color>
+</resources>

@@ -72,7 +72,7 @@ public class EditActivity extends Activity {
             }
         });
 
-        Button back = (Button) findViewById(R.id.btnBack);
+        View back = findViewById(R.id.btnBack);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

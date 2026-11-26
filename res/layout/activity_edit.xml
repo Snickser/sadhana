@@ -3,44 +3,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFF8F0">
+    android:background="@color/cream">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#E65100"
+        android:background="@drawable/bg_header"
         android:gravity="center_vertical"
-        android:paddingLeft="6dp"
-        android:paddingRight="16dp">
+        android:paddingLeft="10dp"
+        android:paddingRight="16dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
 
-        <Button
+        <ImageButton
             android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="48dp"
-            android:text="‹"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:backgroundTint="#F57C00"
-            android:textColor="#FFFFFF" />
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:padding="10dp"
+            android:background="@drawable/btn_icon"
+            android:src="@drawable/ic_back"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/back_title" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:text="Отчёт за день"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
+            android:layout_marginLeft="12dp"
+            android:text="@string/edit_title"
+            android:textColor="#FFF8E7"
+            android:textSize="17sp"
+            android:fontFamily="serif"
             android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_lotus"
+            android:contentDescription="@string/lotus" />
     </LinearLayout>
 
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="0dp"
     android:layout_weight="1"
-    android:background="#FFF8F0"
+    android:background="@color/cream"
     android:fillViewport="true">
 
     <LinearLayout
@@ -62,7 +70,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="#3E2723"
+                android:textColor="@color/ink"
                 android:textSize="17sp"
                 android:textStyle="bold"
                 android:text="" />
@@ -73,8 +81,8 @@
                 android:layout_height="wrap_content"
                 android:text="Дата"
                 android:textSize="13sp"
-                android:backgroundTint="#FFB74D"
-                android:textColor="#4E342E" />
+                android:backgroundTint="@color/gold"
+                android:textColor="@color/ink" />
         </LinearLayout>
 
         <TextView
@@ -82,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Круги джапы"
-            android:textColor="#5D4037"
+            android:textColor="@color/ink"
             android:textSize="14sp" />
 
         <LinearLayout
@@ -99,8 +107,8 @@
                 android:text="−"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:backgroundTint="#FFE0B2"
-                android:textColor="#BF360C" />
+                android:backgroundTint="@color/gold_pale"
+                android:textColor="@color/maroon" />
 
             <EditText
                 android:id="@+id/inRounds"
@@ -113,7 +121,7 @@
                 android:maxLength="3"
                 android:gravity="center"
                 android:textSize="18sp"
-                android:textColor="#3E2723"
+                android:textColor="@color/ink"
                 android:hint="0"
                 android:background="@drawable/card_bg"
                 android:padding="14dp" />
@@ -125,8 +133,8 @@
                 android:text="+"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:backgroundTint="#FFE0B2"
-                android:textColor="#BF360C" />
+                android:backgroundTint="@color/gold_pale"
+                android:textColor="@color/maroon" />
         </LinearLayout>
 
         <LinearLayout
@@ -142,8 +150,8 @@
                 android:layout_weight="1"
                 android:text="4"
                 android:textSize="13sp"
-                android:backgroundTint="#F5E6D3"
-                android:textColor="#6D4C41" />
+                android:backgroundTint="@color/gold_pale"
+                android:textColor="@color/ink_soft" />
 
             <Button
                 android:id="@+id/btnR8"
@@ -153,8 +161,8 @@
                 android:layout_marginLeft="4dp"
                 android:text="8"
                 android:textSize="13sp"
-                android:backgroundTint="#F5E6D3"
-                android:textColor="#6D4C41" />
+                android:backgroundTint="@color/gold_pale"
+                android:textColor="@color/ink_soft" />
 
             <Button
                 android:id="@+id/btnR16"
@@ -164,8 +172,8 @@
                 android:layout_marginLeft="4dp"
                 android:text="16"
                 android:textSize="13sp"
-                android:backgroundTint="#FFE0B2"
-                android:textColor="#BF360C"
+                android:backgroundTint="@color/gold_pale"
+                android:textColor="@color/maroon"
                 android:textStyle="bold" />
 
             <Button
@@ -176,8 +184,8 @@
                 android:layout_marginLeft="4dp"
                 android:text="20"
                 android:textSize="13sp"
-                android:backgroundTint="#F5E6D3"
-                android:textColor="#6D4C41" />
+                android:backgroundTint="@color/gold_pale"
+                android:textColor="@color/ink_soft" />
 
             <Button
                 android:id="@+id/btnR25"
@@ -187,8 +195,8 @@
                 android:layout_marginLeft="4dp"
                 android:text="25"
                 android:textSize="13sp"
-                android:backgroundTint="#F5E6D3"
-                android:textColor="#6D4C41" />
+                android:backgroundTint="@color/gold_pale"
+                android:textColor="@color/ink_soft" />
         </LinearLayout>
 
         <TextView
@@ -196,7 +204,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="Чтение книг, минут"
-            android:textColor="#5D4037"
+            android:textColor="@color/ink"
             android:textSize="14sp" />
 
         <EditText
@@ -206,7 +214,7 @@
             android:inputType="number"
             android:maxLength="4"
             android:textSize="16sp"
-            android:textColor="#3E2723"
+            android:textColor="@color/ink"
             android:hint="0"
             android:background="@drawable/card_bg"
             android:padding="14dp"
@@ -217,7 +225,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:text="Регулярные пункты"
-            android:textColor="#5D4037"
+            android:textColor="@color/ink"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -227,7 +235,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:text="Подъём до 5:00"
-            android:textColor="#3E2723"
+            android:textColor="@color/ink"
             android:textSize="16sp" />
 
         <CheckBox
@@ -235,7 +243,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Мангала-арати"
-            android:textColor="#3E2723"
+            android:textColor="@color/ink"
             android:textSize="16sp" />
 
         <CheckBox
@@ -243,7 +251,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Лекция / класс"
-            android:textColor="#3E2723"
+            android:textColor="@color/ink"
             android:textSize="16sp" />
 
         <CheckBox
@@ -251,7 +259,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Только прасад"
-            android:textColor="#3E2723"
+            android:textColor="@color/ink"
             android:textSize="16sp" />
 
         <CheckBox
@@ -259,7 +267,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Отбой до 22:00"
-            android:textColor="#3E2723"
+            android:textColor="@color/ink"
             android:textSize="16sp" />
 
         <TextView
@@ -267,7 +275,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:text="Служение"
-            android:textColor="#5D4037"
+            android:textColor="@color/ink"
             android:textSize="14sp" />
 
         <EditText
@@ -278,7 +286,7 @@
             android:minLines="2"
             android:gravity="top"
             android:textSize="15sp"
-            android:textColor="#3E2723"
+            android:textColor="@color/ink"
             android:background="@drawable/card_bg"
             android:padding="14dp"
             android:layout_marginTop="4dp" />
@@ -288,7 +296,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="Заметки"
-            android:textColor="#5D4037"
+            android:textColor="@color/ink"
             android:textSize="14sp" />
 
         <EditText
@@ -299,7 +307,7 @@
             android:minLines="3"
             android:gravity="top"
             android:textSize="15sp"
-            android:textColor="#3E2723"
+            android:textColor="@color/ink"
             android:background="@drawable/card_bg"
             android:padding="14dp"
             android:layout_marginTop="4dp" />
@@ -310,10 +318,10 @@
             android:layout_height="64dp"
             android:layout_marginTop="20dp"
             android:text="Сохранить"
-            android:textSize="18sp"
+            android:textSize="17sp"
             android:textStyle="bold"
-            android:backgroundTint="#E65100"
-            android:textColor="#FFFFFF" />
+            android:background="@drawable/btn_primary"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/btnDelete"
@@ -322,9 +330,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="16dp"
             android:text="Удалить отчёт"
-            android:textSize="14sp"
-            android:backgroundTint="#EF9A9A"
-            android:textColor="#7F0000"
+            android:textSize="12sp"
+            android:background="@drawable/btn_gold"
+            android:textColor="@color/maroon"
             android:visibility="gone" />
     </LinearLayout>
 </ScrollView>

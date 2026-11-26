@@ -21,8 +21,8 @@ public class BarChartView extends View {
     private int target = 0;
     private String title = "";
     private String unit = "";
-    private int barColor = 0xFFE65100;
-    private int emptyBarColor = 0xFFE8DDD3;
+    private int barColor = 0xFFC1440E;
+    private int emptyBarColor = 0xFFEFE3CE;
 
     private final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint text = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -44,11 +44,11 @@ public class BarChartView extends View {
 
     private void init() {
         density = getResources().getDisplayMetrics().density;
-        text.setColor(0xFF8D6E63);
+        text.setColor(0xFF8A6A52);
         text.setTextSize(sp(9));
-        grid.setColor(0xFFF0E4D8);
+        grid.setColor(0xFFF2E7D3);
         grid.setStrokeWidth(dp(1));
-        targetPaint.setColor(0xFFB0855B);
+        targetPaint.setColor(0xFFC8A15A);
         targetPaint.setStrokeWidth(dp(1.4f));
         targetPaint.setStyle(Paint.Style.STROKE);
         targetPaint.setPathEffect(new DashPathEffect(new float[]{dp(5), dp(4)}, 0));
@@ -87,13 +87,13 @@ public class BarChartView extends View {
 
         // заголовок
         Paint titlePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        titlePaint.setColor(0xFF3E2723);
+        titlePaint.setColor(0xFF6B1F1F);
         titlePaint.setTextSize(sp(13));
         titlePaint.setFakeBoldText(true);
         canvas.drawText(title, dp(4), dp(16), titlePaint);
 
         if (n == 0) {
-            text.setColor(0xFFA1887F);
+            text.setColor(0xFF8A6A52);
             canvas.drawText("нет данных за период", dp(4), h / 2f, text);
             return;
         }
@@ -150,7 +150,7 @@ public class BarChartView extends View {
 
         // подписи дат: не больше шести, чтобы не слипались
         int step = Math.max(1, (int) Math.ceil(n / 6.0));
-        text.setColor(0xFF8D6E63);
+        text.setColor(0xFF8A6A52);
         for (int i = 0; i < n; i += step) {
             float cx = left + slot * i + slot / 2f;
             String s = i < labels.length ? labels[i] : "";
@@ -161,7 +161,7 @@ public class BarChartView extends View {
         // подпись единицы измерения справа внизу
         if (unit.length() > 0) {
             float tw = text.measureText(unit);
-            text.setColor(0xFFA1887F);
+            text.setColor(0xFF8A6A52);
             canvas.drawText(unit, right - tw, top - dp(4), text);
         }
     }

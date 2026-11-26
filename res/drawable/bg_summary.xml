@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Полоса сводки под шапкой: сандаловый фон, золотая линия снизу -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#F7E9CE" />
+        </shape>
+    </item>
+    <item
+        android:gravity="bottom"
+        android:height="1dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#E8D3A9" />
+        </shape>
+    </item>
+</layer-list>
