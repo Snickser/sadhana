@@ -123,25 +123,28 @@
             android:visibility="gone" />
     </FrameLayout>
 
-    <!-- Нижняя панель: мягкие «пилюли», главное действие — шафрановое -->
+    <!-- Нижняя панель: кнопки по содержимому, по центру — не растянуты на всю ширину -->
     <LinearLayout
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:gravity="center"
         android:clipChildren="false"
         android:clipToPadding="false"
         android:background="@drawable/bg_bottom_bar"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
         android:paddingTop="8dp"
-        android:paddingBottom="14dp">
+        android:paddingBottom="16dp">
 
         <Button
             android:id="@+id/btnExport"
-            android:layout_width="0dp"
-            android:layout_height="46dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:minWidth="0dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
             android:text="Экспорт"
             android:textSize="12sp"
             android:insetTop="0dp"
@@ -155,10 +158,12 @@
 
         <Button
             android:id="@+id/btnImport"
-            android:layout_width="0dp"
-            android:layout_height="46dp"
-            android:layout_weight="1"
-            android:layout_marginLeft="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:minWidth="0dp"
+            android:layout_marginLeft="6dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
             android:text="Импорт"
             android:textSize="12sp"
             android:insetTop="0dp"
@@ -172,16 +177,16 @@
 
         <Button
             android:id="@+id/btnAdd"
-            android:layout_width="0dp"
-            android:layout_height="46dp"
-            android:layout_weight="1.2"
-            android:layout_marginLeft="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:minWidth="0dp"
+            android:layout_marginLeft="6dp"
             android:text="Отчёт"
-            android:textSize="13sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             android:drawableLeft="@drawable/ic_plus"
-            android:drawablePadding="5dp"
-            android:paddingLeft="10dp"
+            android:drawablePadding="4dp"
+            android:paddingLeft="12dp"
             android:paddingRight="14dp"
             android:insetTop="0dp"
             android:insetBottom="0dp"

@@ -170,18 +170,20 @@ def main():
         y += ch + int(dp(10))
 
     # ---- нижняя панель ----
-    by = H - int(dp(76))
+    by = H - int(dp(78))
     d.rectangle([0, by, W, H], fill=CREAM)
     d.line([(0, by), (W, by)], fill=GOLD_LIGHT, width=max(1, int(dp(1))))
-    pad = int(dp(10))
-    bh = int(dp(46))
+    bh = int(dp(42))
     ty = by + int(dp(8))
-    total = W - 2 * pad - int(dp(16))
-    w1 = int(total / 3.2)
-    w3 = int(total * 1.2 / 3.2)
-    w2 = total - w1 - w3
-    x = pad
-    for w, label, primary in ((w1, "Экспорт", False), (w2, "Импорт", False), (w3, "＋ Отчёт", True)):
+    # ширины по содержимому, как wrap_content
+    def tw(t, sp, bold=False):
+        return int(d.textlength(t, font=font(sp, bold=bold)))
+    w1 = tw("Экспорт", 12) + int(dp(28))
+    w2 = tw("Импорт", 12) + int(dp(28))
+    w3 = int(dp(15)) + int(dp(4)) + tw("Отчёт", 12, True) + int(dp(26))
+    total = w1 + w2 + w3 + int(dp(12))
+    x = int((W - total) / 2)
+    for w, label, primary in ((w1, "Экспорт", False), (w2, "Импорт", False), (w3, "Отчёт", True)):
         if primary:
             pill(img, (x, ty, x + w, ty + bh), (217, 97, 27), (169, 54, 9), outline=GOLD)
             f = font(13, bold=True); col = WHITE
@@ -192,13 +194,13 @@ def main():
         tw = d.textlength(label, font=f)
         if primary:
             icon_w = dp(15)
-            total_w = icon_w + dp(5) + tw
+            total_w = icon_w + dp(4) + tw
             ix = x + (w - total_w) / 2
             vector_icon(img, "ic_plus", ix + icon_w / 2, ty + bh / 2, icon_w)
             d = ImageDraw.Draw(img)
-            d.text((ix + icon_w + dp(5), ty + bh / 2 - dp(6)), label, font=f, fill=col)
+            d.text((ix + icon_w + dp(4), ty + bh / 2 - dp(5)), label, font=f, fill=col)
         else:
-            d.text((x + (w - tw) / 2, ty + bh / 2 - dp(6)), label, font=f, fill=col)
+            d.text((x + (w - tw) / 2, ty + bh / 2 - dp(5)), label, font=f, fill=col)
         x += w + int(dp(8))
 
     img.save("/opt/data/cache/scratch/vaishnava_main.png")
