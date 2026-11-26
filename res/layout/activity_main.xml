@@ -105,16 +105,9 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:paddingTop="8dp"
-            android:paddingBottom="14dp"
+            android:paddingBottom="8dp"
             android:clipToPadding="false"
             android:scrollbars="vertical" />
-
-        <!-- Затухание внизу списка: карточка уходит под панель кнопок плавно -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="14dp"
-            android:layout_gravity="bottom"
-            android:background="@drawable/bg_list_fade" />
 
         <TextView
             android:id="@+id/empty"
@@ -130,13 +123,12 @@
             android:visibility="gone" />
     </FrameLayout>
 
-    <!-- Нижняя панель: кнопки по содержимому, по центру — не растянуты на всю ширину -->
+    <!-- Нижняя панель: кнопки на всю ширину, высота 38dp -->
     <LinearLayout
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center"
         android:clipChildren="false"
         android:clipToPadding="false"
         android:background="@drawable/bg_bottom_bar"
@@ -147,11 +139,10 @@
 
         <Button
             android:id="@+id/btnExport"
-            android:layout_width="wrap_content"
-            android:layout_height="42dp"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_weight="1"
             android:minWidth="0dp"
-            android:paddingLeft="14dp"
-            android:paddingRight="14dp"
             android:text="Экспорт"
             android:textSize="12sp"
             android:insetTop="0dp"
@@ -165,8 +156,9 @@
 
         <Button
             android:id="@+id/btnImport"
-            android:layout_width="wrap_content"
-            android:layout_height="42dp"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_weight="1"
             android:minWidth="0dp"
             android:layout_marginLeft="6dp"
             android:paddingLeft="14dp"
@@ -184,8 +176,9 @@
 
         <Button
             android:id="@+id/btnAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="42dp"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_weight="1.2"
             android:minWidth="0dp"
             android:layout_marginLeft="6dp"
             android:text="Отчёт"
