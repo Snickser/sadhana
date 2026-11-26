@@ -141,6 +141,12 @@
             android:layout_weight="1"
             android:text="Экспорт"
             android:textSize="12sp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:stateListAnimator="@null"
+            android:elevation="0dp"
+            android:includeFontPadding="false"
+            android:gravity="center"
             android:background="@drawable/btn_gold"
             android:textColor="@color/maroon" />
 
@@ -152,6 +158,12 @@
             android:layout_marginLeft="8dp"
             android:text="Импорт"
             android:textSize="12sp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:stateListAnimator="@null"
+            android:elevation="0dp"
+            android:includeFontPadding="false"
+            android:gravity="center"
             android:background="@drawable/btn_gold"
             android:textColor="@color/maroon" />
 
@@ -168,6 +180,12 @@
             android:drawablePadding="5dp"
             android:paddingLeft="10dp"
             android:paddingRight="14dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:stateListAnimator="@null"
+            android:elevation="0dp"
+            android:includeFontPadding="false"
+            android:gravity="center"
             android:background="@drawable/btn_primary"
             android:textColor="@color/white" />
     </LinearLayout>

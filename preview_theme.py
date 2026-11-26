@@ -58,7 +58,8 @@ def soft_circle(img, box, fill_rgba, outline):
 
 def pill(img, box, top, bottom, outline=None, radius=None):
     w, h = box[2] - box[0], box[3] - box[1]
-    r = radius if radius is not None else h // 2
+    # радиус не больше половины высоты, иначе низ «подрезается»
+    r = radius if radius is not None else min(h // 2, int(dp(23)))
     g = vgrad((w, h), top, bottom)
     img.paste(g, (box[0], box[1]), rounded_mask((w, h), r))
     if outline:
