@@ -9,7 +9,8 @@
     <string name="donate_title">Поддержать проект</string>
     <string name="delete_all_title">Удалить все записи</string>
     <string name="menu_title">Меню</string>
-    <string name="menu_updates">Проверить обновления</string>
+    <string name="menu_updates">Проверить обновление приложения</string>
+    <string name="update_title">Обновление приложения</string>
     <string name="menu_version">Версия %1$s</string>
     <string name="back_title">Назад</string>
 </resources>

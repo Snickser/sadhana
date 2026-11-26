@@ -187,7 +187,7 @@ public class MainActivity extends Activity {
     private void checkForUpdates() {
         final String current = currentVersionName();
         final AlertDialog progress = new AlertDialog.Builder(this)
-                .setTitle(R.string.menu_updates)
+                .setTitle(R.string.update_title)
                 .setMessage("Запрашиваю номер последней версии на GitHub…")
                 .setCancelable(true)
                 .create();
@@ -212,7 +212,7 @@ public class MainActivity extends Activity {
     private void showUpdateResult(UpdateChecker.Result result, String current) {
         if (!result.isOk()) {
             new AlertDialog.Builder(this)
-                    .setTitle(R.string.menu_updates)
+                    .setTitle(R.string.update_title)
                     .setMessage(result.error
                             + "\n\nПроверить можно вручную: открыть страницу релизов в браузере?")
                     .setNegativeButton("Закрыть", null)
@@ -244,7 +244,7 @@ public class MainActivity extends Activity {
                     .show();
         } else {
             new AlertDialog.Builder(this)
-                    .setTitle(R.string.menu_updates)
+                    .setTitle(R.string.update_title)
                     .setMessage("Обновлений нет: установлена последняя версия " + current + ".")
                     .setPositiveButton("ОК", null)
                     .show();
