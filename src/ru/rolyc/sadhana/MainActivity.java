@@ -106,11 +106,11 @@ public class MainActivity extends Activity {
             }
         });
 
-        View deleteAll = findViewById(R.id.btnDeleteAll);
-        deleteAll.setOnClickListener(new View.OnClickListener() {
+        View menu = findViewById(R.id.btnMenu);
+        menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                confirmDeleteAll();
+                showMenuDialog();
             }
         });
 
@@ -137,6 +137,130 @@ public class MainActivity extends Activity {
         NavInsets.applyBottomInset(findViewById(R.id.bottomBar));
 
         refresh();
+    }
+
+    // ---------------- меню (шестерёнка) ----------------
+
+    /** Меню: версия приложения, проверка обновлений, удаление всех записей. */
+    private void showMenuDialog() {
+        View content = getLayoutInflater().inflate(R.layout.dialog_menu, null);
+        TextView version = (TextView) content.findViewById(R.id.tvMenuVersion);
+        version.setText("Установлена версия " + currentVersionName());
+
+        final AlertDialog dlg = new AlertDialog.Builder(this)
+                .setTitle(R.string.menu_title)
+                .setView(content)
+                .create();
+
+        content.findViewById(R.id.btnMenuUpdates).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dlg.dismiss();
+                checkForUpdates();
+            }
+        });
+        content.findViewById(R.id.btnMenuDeleteAll).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dlg.dismiss();
+                confirmDeleteAll();
+            }
+        });
+        content.findViewById(R.id.btnMenuClose).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dlg.dismiss();
+            }
+        });
+        dlg.show();
+    }
+
+    private String currentVersionName() {
+        try {
+            return getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+        } catch (Exception e) {
+            return "?";
+        }
+    }
+
+    /** Запрос к GitHub в фоновом потоке; ответ показываем на экране. */
+    private void checkForUpdates() {
+        final String current = currentVersionName();
+        final AlertDialog progress = new AlertDialog.Builder(this)
+                .setTitle(R.string.menu_updates)
+                .setMessage("Запрашиваю номер последней версии на GitHub…")
+                .setCancelable(true)
+                .create();
+        progress.show();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                final UpdateChecker.Result result = UpdateChecker.fetchLatest();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (isFinishing()) return;
+                        progress.dismiss();
+                        showUpdateResult(result, current);
+                    }
+                });
+            }
+        }, "update-check").start();
+    }
+
+    private void showUpdateResult(UpdateChecker.Result result, String current) {
+        if (!result.isOk()) {
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.menu_updates)
+                    .setMessage(result.error
+                            + "\n\nПроверить можно вручную: открыть страницу релизов в браузере?")
+                    .setNegativeButton("Закрыть", null)
+                    .setPositiveButton("Открыть", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            openUrl("https://github.com/Snickser/sadhana/releases/latest");
+                        }
+                    })
+                    .show();
+            return;
+        }
+
+        String remote = VersionCheck.tagToVersion(result.tag);
+        if (VersionCheck.isNewer(remote, current)) {
+            new AlertDialog.Builder(this)
+                    .setTitle("Есть новая версия")
+                    .setMessage("Установлена " + current + ", на GitHub уже " + remote
+                            + ".\n\nСкачать и установить можно по кнопке ниже — файл откроется "
+                            + "в браузере, установка поверх сохранит базу.")
+                    .setNegativeButton("Позже", null)
+                    .setPositiveButton("Скачать", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            openUrl(result.pageUrl != null ? result.pageUrl
+                                    : "https://github.com/Snickser/sadhana/releases/latest");
+                        }
+                    })
+                    .show();
+        } else {
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.menu_updates)
+                    .setMessage("Обновлений нет: установлена последняя версия " + current + ".")
+                    .setPositiveButton("ОК", null)
+                    .show();
+        }
+    }
+
+    private void openUrl(String url) {
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+        } catch (Exception e) {
+            new AlertDialog.Builder(this)
+                    .setTitle("Ссылка")
+                    .setMessage("Не удалось открыть браузер.\n\n" + url)
+                    .setPositiveButton("ОК", null)
+                    .show();
+        }
     }
 
     private void confirmDeleteAll() {

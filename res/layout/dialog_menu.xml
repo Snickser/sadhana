@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="8dp">
+
+    <TextView
+        android:id="@+id/tvMenuVersion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/ink_soft"
+        android:textSize="13sp"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btnMenuUpdates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/menu_updates"
+        android:textSize="13sp"
+        android:background="@drawable/btn_gold"
+        android:textColor="@color/maroon" />
+
+    <Button
+        android:id="@+id/btnMenuDeleteAll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="@string/delete_all_title"
+        android:textSize="13sp"
+        android:background="@drawable/btn_danger"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btnMenuClose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Закрыть"
+        android:textSize="13sp"
+        android:background="@drawable/btn_gold"
+        android:textColor="@color/ink" />
+</LinearLayout>

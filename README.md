@@ -10,7 +10,7 @@
 ## Файл для установки
 
 Последняя версия — на странице [Releases](https://github.com/Snickser/sadhana/releases/latest):
-`sadhana-2.3.apk`, подписан, minSdk 21 (Android 5.0+), targetSdk 34.
+`sadhana-3.8.apk`, подписан, minSdk 21 (Android 5.0+), targetSdk 34.
 Ставится поверх любой предыдущей версии как обновление: база сохраняется.
 
 Установка: скачать APK → открыть на телефоне → разрешить установку из этого источника
@@ -34,8 +34,8 @@
 - **Напоминание**: ⏰ в шапке → ежедневное уведомление в выбранное время (по умолчанию 21:00).
 - **Графики**: 📊 в шапке → круги, регулярные пункты и чтение по дням за 7 / 30 / 90 дней,
   со сводкой (среднее, лучший день, серия подряд).
-- **Очистка базы**: 🗑 в шапке → удаление всех записей с подтверждением и предложением
-  сделать копию.
+- **Меню**: ⚙ в шапке → версия приложения, проверка обновлений на GitHub, удаление всех
+  записей (с двойным подтверждением и предложением сделать копию).
 - **Поддержать проект**: кнопка ♥ в шапке → страница YooMoney в браузере.
 
 ## Логика импорта
@@ -80,7 +80,7 @@
 
 ```bash
 python3 make_icon.py     # иконки mipmap-*
-./build.sh               # → sadhana-1.0.apk
+./build.sh               # → sadhana-<версия>.apk
 ```
 
 Тесты чистой логики (JSON экспорт/импорт, без Android):
@@ -93,7 +93,8 @@ java -cp build/test-classes ReportJsonTest    # 45 проверок
 java -cp build/test-classes NumTest          # 26 проверок
 java -cp build/test-classes ReminderTimeTest # 12 проверок
 java -cp build/test-classes StatsDataTest    # 27 проверок
-java -cp build/test-classes AxisTest         # 22 проверки
+java -cp build/test-classes AxisTest         # 25 проверок
+java -cp build/test-classes VersionTest      # 26 проверок
 
 python3 preview_charts.py                    # макет графиков в PNG (PIL, для проверки геометрии)
 python3 preview_theme.py                     # макет главного экрана в новом стиле
@@ -122,6 +123,9 @@ src/ru/rolyc/sadhana/
   ReminderReceiver.java   срабатывание: уведомление + следующее на завтра
   BootReceiver.java    переустановка будильника после перезагрузки
   Notifications.java   канал и показ уведомления
+  NavInsets.java       отступ под системную навигацию
+  VersionCheck.java    сравнение версий (чистый Java)
+  UpdateChecker.java   запрос последней версии к GitHub Releases
 res/                   layout, стили, палитра (values/colors.xml), векторные иконки
 test/                  JVM-тесты чистой логики (5 файлов)
 build.sh, make_icon.py, preview_charts.py

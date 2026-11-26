@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Шестерёнка: кольцо-обводка с отверстием внутри + восемь зубьев.
+     Отверстие настоящее (кольцо нарисовано stroke, а не заливкой), поэтому
+     иконка смотрится одинаково на любом фоне. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFF8E7"
+        android:pathData="M10.92,5.08 L10.80,1.27 L13.20,1.27 L13.08,5.08 Z" />
+    <path
+        android:fillColor="#FFF8E7"
+        android:pathData="M16.13,6.35 L18.74,3.56 L20.44,5.26 L17.65,7.87 Z" />
+    <path
+        android:fillColor="#FFF8E7"
+        android:pathData="M18.92,10.92 L22.73,10.80 L22.73,13.20 L18.92,13.08 Z" />
+    <path
+        android:fillColor="#FFF8E7"
+        android:pathData="M17.65,16.13 L20.44,18.74 L18.74,20.44 L16.13,17.65 Z" />
+    <path
+        android:fillColor="#FFF8E7"
+        android:pathData="M13.08,18.92 L13.20,22.73 L10.80,22.73 L10.92,18.92 Z" />
+    <path
+        android:fillColor="#FFF8E7"
+        android:pathData="M7.87,17.65 L5.26,20.44 L3.56,18.74 L6.35,16.13 Z" />
+    <path
+        android:fillColor="#FFF8E7"
+        android:pathData="M5.08,13.08 L1.27,13.20 L1.27,10.80 L5.08,10.92 Z" />
+    <path
+        android:fillColor="#FFF8E7"
+        android:pathData="M6.35,7.87 L3.56,5.26 L5.26,3.56 L7.87,6.35 Z" />
+    <path
+        android:strokeColor="#FFF8E7"
+        android:strokeWidth="3.2"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M5.00,12.00 C5.00,8.13 8.13,5.00 12.00,5.00 C15.87,5.00 19.00,8.13 19.00,12.00 C19.00,15.87 15.87,19.00 12.00,19.00 C8.13,19.00 5.00,15.87 5.00,12.00 Z" />
+</vector>

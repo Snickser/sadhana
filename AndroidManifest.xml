@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ru.rolyc.sadhana"
-    android:versionCode="27"
-    android:versionName="3.7">
+    android:versionCode="28"
+    android:versionName="3.8">
 
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34" />
 
+    <!-- Только для проверки новых версий: запрос к api.github.com, ничего не отправляем -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
