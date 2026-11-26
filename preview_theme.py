@@ -110,23 +110,21 @@ def main():
     d = ImageDraw.Draw(img)
 
     # ---- шапка ----
-    hh = int(dp(66))
+    hh = int(dp(56))  # без подзаголовка шапка ниже
     header = vgrad((W, hh), (217, 97, 27), KESAR_DEEP)
-    mask = Image.new("L", (W, hh), 0)
-    ImageDraw.Draw(mask).rounded_rectangle([0, -int(dp(20)), W, hh], radius=int(dp(18)), fill=255)
-    img.paste(header, (0, 0), mask)
+    img.paste(header, (0, 0))          # без скруглений
     d = ImageDraw.Draw(img)
     d.rectangle([0, hh - int(dp(2)), W, hh], fill=GOLD)
 
-    lotus(img, d, int(dp(26)), int(dp(33)), int(dp(22)))
-    d.text((dp(44), dp(16)), "Садхана", font=font(16, bold=True), fill=(255, 248, 231))
-    d.text((dp(44), dp(38)), "साधना · ежедневные отчёты", font=font(9), fill=GOLD_LIGHT)
+    lotus(img, d, int(dp(26)), int(dp(28)), int(dp(22)))
+    d = ImageDraw.Draw(img)
+    d.text((dp(44), dp(19)), "Садхана", font=font(16, bold=True), fill=(255, 248, 231))
 
     # круглые кнопки с настоящими векторными иконками
     icons = ["ic_stats", "ic_alarm", "ic_heart", "ic_trash"]
     for i, icon in enumerate(icons):
         cx = W - int(dp(8)) - int(dp(38)) * (4 - i) - int(dp(4)) * (4 - i) + int(dp(19))
-        cy = int(dp(33))
+        cy = int(dp(28))
         r = int(dp(19))
         soft_circle(img, [cx - r, cy - r, cx + r, cy + r], (0, 0, 0, 51), GOLD)
         vector_icon(img, icon, cx, cy, int(dp(20)))
@@ -171,12 +169,12 @@ def main():
         y += ch + int(dp(10))
 
     # ---- нижняя панель ----
-    by = H - int(dp(74))
+    by = H - int(dp(76))
     d.rectangle([0, by, W, H], fill=CREAM)
     d.line([(0, by), (W, by)], fill=GOLD_LIGHT, width=max(1, int(dp(1))))
     pad = int(dp(10))
     bh = int(dp(46))
-    ty = by + int(dp(10))
+    ty = by + int(dp(8))
     total = W - 2 * pad - int(dp(16))
     w1 = int(total / 3.2)
     w3 = int(total * 1.2 / 3.2)

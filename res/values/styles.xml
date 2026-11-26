@@ -19,10 +19,4 @@
         <item name="android:letterSpacing">0.04</item>
     </style>
 
-    <style name="HeaderSubtitle">
-        <item name="android:textColor">#E8D3A9</item>
-        <item name="android:textSize">9sp</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:letterSpacing">0.08</item>
-    </style>
 </resources>
