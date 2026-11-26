@@ -105,9 +105,16 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:paddingTop="8dp"
-            android:paddingBottom="8dp"
+            android:paddingBottom="14dp"
             android:clipToPadding="false"
             android:scrollbars="vertical" />
+
+        <!-- Затухание внизу списка: карточка уходит под панель кнопок плавно -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="14dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bg_list_fade" />
 
         <TextView
             android:id="@+id/empty"
