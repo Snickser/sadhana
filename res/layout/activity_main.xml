@@ -125,9 +125,12 @@
 
     <!-- Нижняя панель: мягкие «пилюли», главное действие — шафрановое -->
     <LinearLayout
+        android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:clipChildren="false"
+        android:clipToPadding="false"
         android:background="@drawable/bg_bottom_bar"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"

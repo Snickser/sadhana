@@ -133,6 +133,9 @@ public class MainActivity extends Activity {
         ReminderScheduler.apply(this);
         Notifications.ensureChannel(this);
 
+        // Панель кнопок не должна уходить под системную навигацию
+        NavInsets.applyBottomInset(findViewById(R.id.bottomBar));
+
         refresh();
     }
 
